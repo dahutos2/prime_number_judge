@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load humanize %}
 {% block main %}
 {% for error in form.non_field_errors %}
 <div class="alert alert-danger" role="alert">
@@ -8,22 +9,22 @@
 
 <div class="row">
     <div class="col-sm">
-        <h2>変換前</h2>
+        <h2>計算</h2>
         <form method="post">
             {% csrf_token %}
             {% for field in form %}
             <p>
                 <label>{{ field.label }}</label>
-                {{ field }}
-            </p>
+                <a>{{ field }}</a>
+            
             {% endfor %}
             
-            <input type="submit" value="変換" class="btn btn-info" />
+            <input type="submit" value="計算" class="btn btn-info" />
         </form>  
     </div>
     <div class="col-sm">
-        <h2>変換後</h2>
-        <p>{{ new_text }}</p>
+        <h2>結果</h2>
+        <p>{{ new_text|floatformat|intcomma|add:'円' }}</p>
     </div>
 </div>
 {% endblock %}
