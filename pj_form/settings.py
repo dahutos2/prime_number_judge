@@ -23,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ikn-0@v!d(^^p)8y01nh53!l!o7i$av0gpp80$cfu6_^vg@r5y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['*']
-
+#DEBUG = True
+DEBUG = False
+#ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['calculation-dahutos.herokuapp.com']
 
 # Application definition
 
