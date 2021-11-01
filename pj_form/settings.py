@@ -26,7 +26,7 @@ SECRET_KEY = 'ikn-0@v!d(^^p)8y01nh53!l!o7i$av0gpp80$cfu6_^vg@r5y'
 #DEBUG = True
 DEBUG = False
 #ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['calculation-dahutos.herokuapp.com']
+ALLOWED_HOSTS = ['prime-number-judge.herokuapp.com']
 
 # Application definition
 
@@ -126,4 +126,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 NUMBER_GROUPING = 3
-

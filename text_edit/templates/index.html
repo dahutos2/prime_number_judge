@@ -1,28 +1,25 @@
 {% extends "base.html" %}
 {% load humanize %}
 {% block main %}
-{% for error in form.non_field_errors %}
-<div class="alert alert-danger" role="alert">
-  {{ error }}
-</div>
-{% endfor %}
 <div class="row">
     <div class="col-12 col-md-6 col-lg-4">
-        <h2>結果</h2>
-{% if new_text　%}
-<p>{{ new_text|floatformat|intcomma}}円</p>
-{% endif %}
+      <h3>素因数分解を行います</h3>
         <form method="post">
             {% csrf_token %}
             {% for field in form %}
             <p>
-                <label>{{ field.label }}</label>
                 <a>{{ field }}</a>
-            
             {% endfor %}
             <p>
             <input type="submit" value="計算" class="btn btn-info" />
-        </form>  
+        </form>
+        {% if prime_number %}
+        <b>{{ number }}</b>は、<b>{{ prime_number }}</b> です。
+        {% endif %}
+        {% if prime_number %}
+        <p>
+          計算時間は<b>{{ calculation_time }}</b>秒です。
+        {% endif %}
     </div>
 </div>
 {% endblock %}
