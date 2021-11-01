@@ -23,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ikn-0@v!d(^^p)8y01nh53!l!o7i$av0gpp80$cfu6_^vg@r5y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#DEBUG = False
-ALLOWED_HOSTS = ['*']
-#ALLOWED_HOSTS = ['prime-number-judge.herokuapp.com']
+#DEBUG = True
+DEBUG = False
+#ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['prime-number-judge.herokuapp.com']
 
 # Application definition
 
@@ -124,5 +124,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 NUMBER_GROUPING = 3
