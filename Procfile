@@ -1,1 +1,1 @@
-web: gunicorn pj_form.wsgi
+web: gunicorn config.wsgi
