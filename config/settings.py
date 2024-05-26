@@ -19,14 +19,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
+from dotenv import (
+    find_dotenv,
+    load_dotenv,
+)
+
+load_dotenv(find_dotenv())
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "ikn-0@v!d(^^p)8y01nh53!l!o7i$av0gpp80$cfu6_^vg@r5y"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-# DEBUG = False
 ALLOWED_HOSTS = ["*"]
-# ALLOWED_HOSTS = ['prime-number-judge.herokuapp.com']
 
 # Application definition
 
@@ -128,3 +132,8 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 NUMBER_GROUPING = 3
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
